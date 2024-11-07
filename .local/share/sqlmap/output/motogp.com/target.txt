@@ -1,0 +1,1 @@
+http://motogp.com (GET)  # sqlmap-dev/sqlmap.py -u motogp.com --batch

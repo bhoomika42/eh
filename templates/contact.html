@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EH</title>
+  <link rel="stylesheet" href="static/css/application.css">
+  <!-- <script type="text/javascript" src="../assets/js/index.js"></script> -->
+    <!-- Include intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <style>
+    
+        .form-container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2d2f34;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            border-radius: 15px;
+            margin-bottom: 56px
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="date"], input[type="tel"], select, textarea {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .intl-tel-input {
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a class="home-link" href="../index.html">
+        <img src="static/images/logo.png" alt="logo" />
+        <h1>Solutions</h1>
+      </a>
+    </div> 
+    <ul>
+      <li style="margin-left: 0px;">
+        <a href="/">Home</a>
+      </li>
+    
+      <li>
+        <a href="/contact">Contract</a>
+      </li>
+      <!-- <li>
+        <a href="../index.html">Support</a>
+      </li> -->
+    </ul>
+  </nav>
+  <div class="main-container">
+    <div class="row section-one col-md-12 mr-0 ml-0">
+        <div class="division-one col-md-6">
+            <h1>Your Ethical</h1>
+            <h1>Hacking Companion</h1>
+            <p>At EH, we equip security professionals, penetration
+                testers, and ethical hackers with advanced tools to
+                secure networks, applications, and systems.</p>
+        </div>
+        <div class="division-two col-md-6">
+            <img class="cover-img" src="static/images/cover.png" alt="cover" />
+        </div>
+    </div>
+    <div class="row section-two col-md-12 mr-0 ml-0">
+        <div class="row col-md-12 tool_section">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Rules of Engagement Worksheet</h2>
+                    <form id="rulesForm">
+                        <h3>Penetration Testing Team Contact Information</h3>
+
+                        <label for="primaryContactTeam">Primary Contact:</label>
+                        <input type="text" id="primaryContactTeam" name="primaryContactTeam" required>
+
+                        <label for="primaryMobile">Mobile Phone:</label>
+                        <input type="tel" id="primaryMobile" name="primaryMobile" required>
+
+                        <label for="primaryPager">Pager:</label>
+                        <input type="text" id="primaryPager" name="primaryPager">
+
+                        <label for="secondaryContactTeam">Secondary Contact:</label>
+                        <input type="text" id="secondaryContactTeam" name="secondaryContactTeam">
+
+                        <label for="secondaryMobile">Mobile Phone:</label>
+                        <input type="tel" id="secondaryMobile" name="secondaryMobile">
+
+                        <label for="secondaryPager">Pager:</label>
+                        <input type="text" id="secondaryPager" name="secondaryPager">
+
+                        <h3>Target Organization Contact Information</h3>
+
+                        <label for="primaryContactOrg">Primary Contact:</label>
+                        <input type="text" id="primaryContactOrg" name="primaryContactOrg" required>
+
+                        <label for="primaryMobileOrg">Mobile Phone:</label>
+                        <input type="tel" id="primaryMobileOrg" name="primaryMobileOrg" required>
+
+                        <label for="primaryPagerOrg">Pager:</label>
+                        <input type="text" id="primaryPagerOrg" name="primaryPagerOrg">
+
+                        <label for="secondaryContactOrg">Secondary Contact:</label>
+                        <input type="text" id="secondaryContactOrg" name="secondaryContactOrg">
+
+                        <label for="secondaryMobileOrg">Mobile Phone:</label>
+                        <input type="tel" id="secondaryMobileOrg" name="secondaryMobileOrg">
+
+                        <label for="secondaryPagerOrg">Pager:</label>
+                        <input type="text" id="secondaryPagerOrg" name="secondaryPagerOrg">
+
+                        <h3>Penetration Test Details</h3>
+                        <label for="dailyDebriefingFrequency">"Daily Debriefing" Frequency:</label>
+                        <input type="text" id="dailyDebriefingFrequency" name="dailyDebriefingFrequency">
+
+                        <label for="dailyDebriefingLocation">"Daily Debriefing" Time/Location:</label>
+                        <input type="text" id="dailyDebriefingLocation" name="dailyDebriefingLocation">
+
+                        <label for="startDate">Start Date of Penetration Test:</label>
+                        <input type="date" id="startDate" name="startDate">
+
+                        <label for="endDate">End Date of Penetration Test:</label>
+                        <input type="date" id="endDate" name="endDate">
+
+                        <label for="testTimes">Testing Occurs at Following Times:</label>
+                        <input type="text" id="testTimes" name="testTimes">
+
+                        <label for="announceTest">Will test be announced to target personnel?</label>
+                        <select id="announceTest" name="announceTest">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+
+                        <label for="shunIPs">Will target organization shun IP addresses of attack systems?</label>
+                        <select id="shunIPs" name="shunIPs">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+
+                        <h3>Additional Test Details</h3>
+
+                        <label for="shunningCapabilities">Does the target organization's network have automatic shunning capabilities that could create a denial-of-service condition? If so, what steps will be taken to mitigate the risk:</label>
+                        <textarea id="shunningCapabilities" name="shunningCapabilities"></textarea>
+
+                        <label for="concludeTest">Would the shunning of attack systems conclude the test?</label>
+                        <input type="text" id="concludeTest" name="concludeTest">
+
+                        <label for="stepsForShunnedSystems">If not, what steps will be taken to continue if systems get shunned and what approvals (if any) will be required:</label>
+                        <textarea id="stepsForShunnedSystems" name="stepsForShunnedSystems"></textarea>
+
+                        <label for="ipAddresses">IP addresses of penetration testing team's attack systems:</label>
+                        <textarea id="ipAddresses" name="ipAddresses"></textarea>
+
+                        <label for="blackBoxTest">Is this a "black box" test?</label>
+                        <input type="text" id="blackBoxTest" name="blackBoxTest">
+
+                        <label for="viewingDataPolicy">What is the policy regarding viewing data (including sensitive data) on compromised hosts:</label>
+                        <textarea id="viewingDataPolicy" name="viewingDataPolicy"></textarea>
+
+                        <label for="observeTeam">Will target personnel observe the testing team?</label>
+                        <input type="text" id="observeTeam" name="observeTeam">
+
+                        <h3>Signatures</h3>
+
+                        <label for="primaryContactSignature">Signature of Primary Contact representing Target Organization:</label>
+                        <input type="text" id="primaryContactSignature" name="primaryContactSignature">
+                        <label for="primaryContactDate">Date:</label>
+                        <input type="date" id="primaryContactDate" name="primaryContactDate">
+
+                        <label for="testingTeamSignature">Signature of Head of Penetration Testing Team:</label>
+                        <input type="text" id="testingTeamSignature" name="testingTeamSignature">
+                        <label for="testingTeamDate">Date:</label>
+                        <input type="date" id="testingTeamDate" name="testingTeamDate">
+
+                        <h3>If necessary, signatures of individual testers:</h3>
+                        <label for="individualTester1">Signature:</label>
+                        <input type="text" id="individualTester1" name="individualTester1">
+                        <label for="tester1Date">Date:</label>
+                        <input type="date" id="tester1Date" name="tester1Date">
+
+                        <label for="individualTester2">Signature:</label>
+                        <input type="text" id="individualTester2" name="individualTester2">
+                        <label for="tester2Date">Date:</label>
+                        <input type="date" id="tester2Date" name="tester2Date">
+
+                        <label for="individualTester3">Signature:</label>
+                        <input type="text" id="individualTester3" name="individualTester3">
+                        <label for="tester3Date">Date:</label>
+                        <input type="date" id="tester3Date" name="tester3Date">
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+
+             
+
+            </div>
+        </div>
+  </div>
+ </div>
+  <footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="footer-text">
+                            <h4>Address</h4>
+                            <span>1030 Idylwyld Dr N, Saskatoon, SK S7L 4J7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="footer-text">
+                            <h4>Call us</h4>
+                            <span>+1 1110001111</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="footer-text">
+                            <h4>Mail us</h4>
+                            <span>ehsolution@eh.ca</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2024, All Right Reserved</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="../pages/contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+      <script>
+          // Initialize the phone input for each mobile phone field
+          const primaryMobileInput = document.querySelector("#primaryMobile");
+          const secondaryMobileInput = document.querySelector("#secondaryMobile");
+          const primaryMobileOrgInput = document.querySelector("#primaryMobileOrg");
+          const secondaryMobileOrgInput = document.querySelector("#secondaryMobileOrg");
+
+          const phoneInputs = [primaryMobileInput, secondaryMobileInput, primaryMobileOrgInput, secondaryMobileOrgInput];
+
+          phoneInputs.forEach(input => {
+              const iti = window.intlTelInput(input, {
+                  initialCountry: "auto",
+                  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+              });
+
+              // Restrict input to only allow numbers after country code
+              input.addEventListener("keypress", function (event) {
+                  const charCode = event.which ? event.which : event.keyCode;
+                  if (charCode < 48 || charCode > 57) {
+                      event.preventDefault();
+                  }
+              });
+          });
+
+          // Handle form submission
+          document.getElementById('rulesForm').addEventListener('submit', function(event) {
+              event.preventDefault();
+              alert('Form submitted successfully!');
+          });
+      </script>
+</body>
+</html>

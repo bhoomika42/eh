@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EH</title>
+  <link rel="stylesheet" href="static/css/application.css">
+  <!-- <script type="text/javascript" src="../assets/js/index.js"></script> -->
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a class="home-link" href="../index.html">
+        <img src="static/images/logo.png" alt="logo" />
+        <h1>Solutions</h1>
+      </a>
+    </div> 
+    <ul>
+      <li style="margin-left: 0px;">
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/contact">Contract</a>
+      </li>
+      <!-- <li>
+        <a href="../index.html">Support</a>
+      </li> -->
+    </ul>
+  </nav>
+  <div class="main-container">
+    <div class="row section-one col-md-12 mr-0 ml-0">
+        <div class="division-one col-md-6">
+            <h1>Your Ethical</h1>
+            <h1>Hacking Companion</h1>
+            <p>At EH, we equip security professionals, penetration
+                testers, and ethical hackers with advanced tools to
+                secure networks, applications, and systems.</p>
+        </div>
+        <div class="division-two col-md-6">
+            <img class="cover-img" src="static/images/cover.png" alt="cover" />
+        </div>
+    </div>
+    <div class="row section-two col-md-12 mr-0 ml-0">
+        <div class="row col-md-12 tool_section">
+            <div class="container">
+                <h1>Nmap Scan Tool</h1>
+                <input type="text" id="target" placeholder="Enter target IP" />
+                <button onclick="performNmapScan()">Scan</button>
+                <div class="tool_output" id="nmap-result"></div>
+            </div>
+        </div>
+  </div>
+ </div>
+  <footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="footer-text">
+                            <h4>Address</h4>
+                            <span>1030 Idylwyld Dr N, Saskatoon, SK S7L 4J7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="footer-text">
+                            <h4>Call us</h4>
+                            <span>+1 1110001111</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="footer-text">
+                            <h4>Mail us</h4>
+                            <span>ehsolution@eh.ca</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2024, All Right Reserved</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="../pages/contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  <script>
+      async function performNmapScan() {
+          const target = document.getElementById('target').value;
+          const response = await fetch('/nmap_scan', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ target })
+          });
+          const data = await response.json();
+          if (response.ok) {
+              let resultHTML = `<h3>Scan Results for ${data.host}</h3>`;
+              resultHTML += `<p><strong>Host State:</strong> ${data.state}</p>`;
+
+              if (data.protocols.length > 0) {
+                  resultHTML += `
+                      <h4>Protocols</h4>
+                      <table border="1">
+                          <thead>
+                              <tr>
+                                  <th>Protocol</th>
+                                  <th>Port</th>
+                                  <th>State</th>
+                                  <th>Service</th>
+                                  <th>Product</th>
+                                  <th>Version</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                  `;
+
+                  data.protocols.forEach(protocol => {
+                      resultHTML += `
+                          <tr>
+                              <td>${protocol.protocol}</td>
+                              <td>${protocol.port}</td>
+                              <td>${protocol.state}</td>
+                              <td>${protocol.name}</td>
+                              <td>${protocol.product}</td>
+                              <td>${protocol.version}</td>
+                          </tr>
+                      `;
+                  });
+
+                  resultHTML += `
+                          </tbody>
+                      </table>
+                  `;
+              } else {
+                  resultHTML += `<p>No protocols found.</p>`;
+              }
+
+              document.getElementById('nmap-result').innerHTML = resultHTML;
+          } else {
+              document.getElementById('nmap-result').innerHTML = `<p>Error: ${data.error}</p>`;
+          }
+      }
+
+      
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+http://99.83.220.12 (GET)  # sqlmap-dev/sqlmap.py -u 99.83.220.12 --batch

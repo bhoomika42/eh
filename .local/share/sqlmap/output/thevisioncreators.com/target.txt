@@ -1,0 +1,1 @@
+https://thevisioncreators.com/ (GET)  # sqlmap-dev/sqlmap.py -u https://thevisioncreators.com/ --batch

@@ -1,0 +1,1 @@
+http://www.google.com (GET)  # sqlmap-dev/sqlmap.py -u www.google.com --batch
